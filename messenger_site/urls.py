@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/$', 'django.contrib.auth.views.login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout'),
-    url(r'^messenger/', include('messenger.urls')),
+    url(r'', include('messenger.urls')),
 )

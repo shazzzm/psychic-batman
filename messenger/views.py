@@ -5,7 +5,7 @@ from django.http import Http404
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Welcome to the messenger index")
+    return render(request, 'index.html')
 
 def inbox(request):
     user_messages = Message.objects.order_by('-time_sent')
@@ -23,3 +23,6 @@ def message(request):
             raise Http404("Message Does Not Exist")
 
     raise Http404("Page Does Not Exist")
+
+def send_message(request):
+    pass
