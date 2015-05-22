@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Messages</h1>
+<ul>
+{% for message in user_messages %}
+<li><a href="message?message_id={{message.pk}}">{{message.title}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

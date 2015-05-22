@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{message.title}}</h1>
+<p class="time_sent">Sent at: {{ message.time_sent }}</p>
+<p class="user_from">By: {{ message.user_from}} </p>
+<p>{{message.message_text}}</p>
+{% endblock %}
