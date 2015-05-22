@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Message
+from .models import Message, User
 from django.http import Http404
 
 # Create your views here.
@@ -24,5 +24,10 @@ def message(request):
 
     raise Http404("Page Does Not Exist")
 
-def send_message(request):
-    pass
+def sendMessage(request):
+    users= User.objects.order_by('username')
+    user_names = [x.username for x in users]
+    print users
+    print user_names
+    context = {'users' : user_names}
+    return render(request, 'sendMessage/sendMessage.html', context)
