@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_anonymous %}
+{% include "registration/form.html" %}
+{% else %}
+<ul>
+  <li><a href="inbox">View Inbox</a></li>
+  <li><a href="sendMessage">Send Message</a></li>
+  <li><a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a></li>
+</ul>
+
+{% endif %}
+{% endblock %}
